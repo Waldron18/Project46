@@ -55,5 +55,23 @@ function textScores(){
     
   textSize(10);
   fill("white");
-  text("Score: " + score,10, 20);
+  text("Score: " + score,10,20);
+ // text("High Score: "+ highscore,10,30);
+}
+
+function play(){
+  movement();
+
+  spawning();
+}
+
+function reset(){
+  gameState = PLAY;
+  redBlocksGroup.destroyEach();
+  greenBlocksGroup.destroyEach();
+  player.velocityX = 0;
+  if(highScore < score){
+    highScore = score;
+  }
+  score = 0;
 }
