@@ -39,16 +39,17 @@ function spawning(){
 }
 
 function scoreChanging(){
-    
-  if(redBlocksGroup.isTouching(player)){
-    score -= 1
-    redBlocksGroup.destroyEach();
-  }
-
+  if(score > 0){
+    if(redBlocksGroup.isTouching(player)){
+      score -= 1
+      redBlocksGroup.destroyEach();
+    }
+}  
   if(greenBlocksGroup.isTouching(player)){
     score += 1
     greenBlocksGroup.destroyEach();
   }
+  
 }
 
 function textScores(){
@@ -75,3 +76,16 @@ function reset(){
   }
   score = 0;
 }
+
+function start(){
+  startButton.show();
+  startButton.mousePressed(play);
+}
+
+function adaptivity(){
+  if(score%10 === 0){
+    redBlocks.velocityY += 5;
+    greenBlocksGroup.velocityY += 5;
+  }
+}
+

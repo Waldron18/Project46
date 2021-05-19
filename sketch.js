@@ -16,14 +16,13 @@ function setup() {
   /*
    startButton = createButton("START");
    startButton.position(width / 2 - 25, height / 2);
-   startButton.visible = true;
-  */
-
-  /* 
+   
    resetButton = createButton("RESET");
    resetButton.position(width / 2 - 25, height / 2);
    resetButton.visible = false;
-  */
+ 
+   gameState = START;
+   */
 }
 
 
@@ -31,12 +30,7 @@ function setup() {
 function draw() {
   background(0);
 
-  gameState = START;
-
-  if (keyWentDown("SPACE")) {
-    gameState = PLAY;
-  }
-
+  /*
   if (gameState === PLAY) {
     play();
     scoreChanging();
@@ -50,9 +44,7 @@ function draw() {
     gameState = END;
   }
 
-  /*
   if (gameState === END) {
-    resetButton.visble = true;
     if(resetButton.mousePressed(reset));
   }
   */
@@ -62,6 +54,5 @@ function draw() {
   textScores();
 
   textSize(10);
-  text("PRESS SPACE TO START", 180, 15);
 
 }
